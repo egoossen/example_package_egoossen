@@ -1,10 +1,13 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptools","setuptools-get-versioning"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools-git-versioning]
+enabled = true
 
 [project]
 name = "example_package_egoossen"
-version = "0.0.1"
+dynamic = ["version"]
 authors = [
     { name="Elijah Goossen", email="ekgoossen@gmail.com" },
 ]
