@@ -19,4 +19,11 @@ test_build: build
 	.venv/bin/pytest
 	rm -rf .venv
 
-.PHONY: all test build test_build
+test_deployment:
+	python3 -m venv .venv
+	.venv/bin/python -m pip install pytest
+	.venv/bin/python -m pip install example_package_egoossen --extra-index-url https://egoossen.github.io/python-package-server/
+	.venv/bin/pytest
+	rm -rf .venv
+
+.PHONY: all test build test_build test_deployment
