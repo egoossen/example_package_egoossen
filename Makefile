@@ -1,5 +1,14 @@
 all:
 
+test: .env/
+	.env/bin/python -m pytest
+
+.env/:
+	python3 -m venv .env
+	.env/bin/python -m pip install -e .
+	.env/bin/python -m pip install pytest
+	touch .env/
+
 build:
 	python3 -m build
 
@@ -10,4 +19,4 @@ test_build: build
 	.venv/bin/pytest
 	rm -rf .venv
 
-.PHONY: all build test_build
+.PHONY: all test build test_build
