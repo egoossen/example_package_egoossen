@@ -1,3 +1,5 @@
+all:
+
 build:
 	python3 -m build
 
@@ -8,4 +10,4 @@ test_build: build
 	.venv/bin/pytest
 	rm -rf .venv
 
-.PHONY: build test_build
+.PHONY: all build test_build
